@@ -5,6 +5,7 @@
  */
 package avro.examples.baseball;
 
+import org.apache.avro.JsonSchemaParser;
 import org.apache.avro.specific.SpecificData;
 import org.apache.avro.util.Utf8;
 import org.apache.avro.message.BinaryMessageEncoder;
@@ -17,7 +18,7 @@ public class JSpecifyNullSafeAnnotationsFieldsTest extends org.apache.avro.speci
   private static final long serialVersionUID = 2433229483110849489L;
 
 
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"JSpecifyNullSafeAnnotationsFieldsTest\",\"namespace\":\"avro.examples.baseball\",\"doc\":\"Test that @org.jspecify.annotations.Nullable and @org.jspecify.annotations.NonNull annotations are created for all fields\",\"fields\":[{\"name\":\"name\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"nullable_name\",\"type\":[{\"type\":\"string\",\"avro.java.string\":\"String\"},\"null\"]},{\"name\":\"favorite_number\",\"type\":\"int\"},{\"name\":\"nullable_favorite_number\",\"type\":[\"int\",\"null\"]}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = JsonSchemaParser.parseInternal("{\"type\":\"record\",\"name\":\"JSpecifyNullSafeAnnotationsFieldsTest\",\"namespace\":\"avro.examples.baseball\",\"doc\":\"Test that @org.jspecify.annotations.Nullable and @org.jspecify.annotations.NonNull annotations are created for all fields\",\"fields\":[{\"name\":\"name\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"nullable_name\",\"type\":[{\"type\":\"string\",\"avro.java.string\":\"String\"},\"null\"]},{\"name\":\"favorite_number\",\"type\":\"int\"},{\"name\":\"nullable_favorite_number\",\"type\":[\"int\",\"null\"]}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static final SpecificData MODEL$ = new SpecificData();
@@ -585,10 +586,10 @@ public class JSpecifyNullSafeAnnotationsFieldsTest extends org.apache.avro.speci
   @Override
   public int hashCode() {
     int result = 1;
-    result = 31 * result + (name == null ? 0 : name.hashCode());
-    result = 31 * result + (nullable_name == null ? 0 : nullable_name.hashCode());
-    result = 31 * result + Integer.hashCode(favorite_number);
-    result = 31 * result + (nullable_favorite_number == null ? 0 : nullable_favorite_number.hashCode());
+    result = 31 * result + (this.name == null ? 0 : this.name.hashCode());
+    result = 31 * result + (this.nullable_name == null ? 0 : this.nullable_name.hashCode());
+    result = 31 * result + Integer.hashCode(this.favorite_number);
+    result = 31 * result + (this.nullable_favorite_number == null ? 0 : this.nullable_favorite_number.hashCode());
     return result;
   }
 

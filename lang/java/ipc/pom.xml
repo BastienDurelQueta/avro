@@ -23,7 +23,7 @@
   <parent>
     <artifactId>avro-parent</artifactId>
     <groupId>org.apache.avro</groupId>
-    <version>1.12.1</version>
+    <version>1.12.2</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
 
@@ -61,10 +61,7 @@
           <!-- some tests hang if not run in a separate JVM -->
           <forkCount>1</forkCount>
           <reuseForks>false</reuseForks>
-           <parallel>none</parallel>
-          <systemProperties>
-            <org.apache.avro.SERIALIZABLE_CLASSES>java.math.BigDecimal,java.math.BigInteger</org.apache.avro.SERIALIZABLE_CLASSES>
-          </systemProperties>
+          <parallel>none</parallel>
         </configuration>
       </plugin>
       <plugin>

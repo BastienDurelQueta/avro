@@ -5,6 +5,7 @@
  */
 package avro.examples.baseball;
 
+import org.apache.avro.JsonSchemaParser;
 import org.apache.avro.specific.SpecificData;
 import org.apache.avro.util.Utf8;
 import org.apache.avro.message.BinaryMessageEncoder;
@@ -17,7 +18,7 @@ public class FieldTest extends org.apache.avro.specific.SpecificRecordBase imple
   private static final long serialVersionUID = 4609235620572341636L;
 
 
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"FieldTest\",\"namespace\":\"avro.examples.baseball\",\"doc\":\"Test various field types\",\"fields\":[{\"name\":\"number\",\"type\":\"int\",\"doc\":\"The number of the player\"},{\"name\":\"last_name\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"timestamp\",\"type\":{\"type\":\"long\",\"logicalType\":\"timestamp-millis\"}},{\"name\":\"timestampMicros\",\"type\":{\"type\":\"long\",\"logicalType\":\"timestamp-micros\"}},{\"name\":\"timeMillis\",\"type\":{\"type\":\"int\",\"logicalType\":\"time-millis\"}},{\"name\":\"timeMicros\",\"type\":{\"type\":\"long\",\"logicalType\":\"time-micros\"}}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = JsonSchemaParser.parseInternal("{\"type\":\"record\",\"name\":\"FieldTest\",\"namespace\":\"avro.examples.baseball\",\"doc\":\"Test various field types\",\"fields\":[{\"name\":\"number\",\"type\":\"int\",\"doc\":\"The number of the player\"},{\"name\":\"last_name\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"timestamp\",\"type\":{\"type\":\"long\",\"logicalType\":\"timestamp-millis\"}},{\"name\":\"timestampMicros\",\"type\":{\"type\":\"long\",\"logicalType\":\"timestamp-micros\"}},{\"name\":\"timeMillis\",\"type\":{\"type\":\"int\",\"logicalType\":\"time-millis\"}},{\"name\":\"timeMicros\",\"type\":{\"type\":\"long\",\"logicalType\":\"time-micros\"}}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static final SpecificData MODEL$ = new SpecificData();
@@ -665,12 +666,12 @@ public class FieldTest extends org.apache.avro.specific.SpecificRecordBase imple
   @Override
   public int hashCode() {
     int result = 1;
-    result = 31 * result + Integer.hashCode(number);
-    result = 31 * result + (last_name == null ? 0 : last_name.hashCode());
-    result = 31 * result + (timestamp == null ? 0 : timestamp.hashCode());
-    result = 31 * result + (timestampMicros == null ? 0 : timestampMicros.hashCode());
-    result = 31 * result + (timeMillis == null ? 0 : timeMillis.hashCode());
-    result = 31 * result + (timeMicros == null ? 0 : timeMicros.hashCode());
+    result = 31 * result + Integer.hashCode(this.number);
+    result = 31 * result + (this.last_name == null ? 0 : this.last_name.hashCode());
+    result = 31 * result + (this.timestamp == null ? 0 : this.timestamp.hashCode());
+    result = 31 * result + (this.timestampMicros == null ? 0 : this.timestampMicros.hashCode());
+    result = 31 * result + (this.timeMillis == null ? 0 : this.timeMillis.hashCode());
+    result = 31 * result + (this.timeMicros == null ? 0 : this.timeMicros.hashCode());
     return result;
   }
 

@@ -5,6 +5,7 @@
  */
 package avro.examples.baseball;
 
+import org.apache.avro.JsonSchemaParser;
 import org.apache.avro.specific.SpecificData;
 import org.apache.avro.util.Utf8;
 import org.apache.avro.message.BinaryMessageEncoder;
@@ -17,7 +18,7 @@ public class OptionalGettersAllFieldsTest extends org.apache.avro.specific.Speci
   private static final long serialVersionUID = 874861432798554536L;
 
 
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"OptionalGettersAllFieldsTest\",\"namespace\":\"avro.examples.baseball\",\"doc\":\"Test that optional getters are created for all fields\",\"fields\":[{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"nullable_name\",\"type\":[\"string\",\"null\"]},{\"name\":\"favorite_number\",\"type\":[\"int\"]},{\"name\":\"nullable_favorite_number\",\"type\":[\"int\",\"null\"]}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = JsonSchemaParser.parseInternal("{\"type\":\"record\",\"name\":\"OptionalGettersAllFieldsTest\",\"namespace\":\"avro.examples.baseball\",\"doc\":\"Test that optional getters are created for all fields\",\"fields\":[{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"nullable_name\",\"type\":[\"string\",\"null\"]},{\"name\":\"favorite_number\",\"type\":[\"int\"]},{\"name\":\"nullable_favorite_number\",\"type\":[\"int\",\"null\"]}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static final SpecificData MODEL$ = new SpecificData();
@@ -497,10 +498,10 @@ public class OptionalGettersAllFieldsTest extends org.apache.avro.specific.Speci
   @Override
   public int hashCode() {
     int result = 1;
-    result = 31 * result + (name == null ? 0 : name.hashCode());
-    result = 31 * result + (nullable_name == null ? 0 : nullable_name.hashCode());
-    result = 31 * result + (favorite_number == null ? 0 : favorite_number.hashCode());
-    result = 31 * result + (nullable_favorite_number == null ? 0 : nullable_favorite_number.hashCode());
+    result = 31 * result + (this.name == null ? 0 : this.name.hashCode());
+    result = 31 * result + (this.nullable_name == null ? 0 : this.nullable_name.hashCode());
+    result = 31 * result + (this.favorite_number == null ? 0 : this.favorite_number.hashCode());
+    result = 31 * result + (this.nullable_favorite_number == null ? 0 : this.nullable_favorite_number.hashCode());
     return result;
   }
 
